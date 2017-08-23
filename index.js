@@ -11,17 +11,16 @@ module.exports = {
     nodeAssets: {
       summernote: {
         vendor: {
-          include: ['dist/summernote.js', 'dist/summernote.css'],
-          processTree(input) {
-            return fastbootTransform(input);
-          },
-        },
-        public: {
           include: [
+            'dist/summernote.js',
+            'dist/summernote.css',
             'dist/font/summernote.eot',
             'dist/font/summernote.ttf',
             'dist/font/summernote.woff'
-          ]
+          ],
+          processTree(input) {
+            return fastbootTransform(input);
+          },
         }
 
       }
@@ -36,11 +35,11 @@ module.exports = {
     var config = projectConfig['ember-cli-summernote'] || { lang: 'en-US' };
 
     // Include Summernote.
-    app.import('vendor/summernote/summernote.css');
-    app.import('vendor/summernote/summernote.min.js');
-    app.import('public/summernote/font/summernote.eot');
-    app.import('public/summernote/font/summernote.ttf');
-    app.import('public/summernote/font/summernote.woff');
+    app.import('vendor/summernote/dist/summernote.css');
+    app.import('vendor/summernote/dist/summernote.js');
+    app.import('vendor/summernote/dist/font/summernote.eot');
+    app.import('vendor/summernote/dist/font/summernote.ttf');
+    app.import('vendor/summernote/dist/font/summernote.woff');
 
     // Include Summernote Lang file.
     if (config.lang) {
