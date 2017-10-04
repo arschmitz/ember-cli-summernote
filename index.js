@@ -37,9 +37,9 @@ module.exports = {
     // Include Summernote.
     app.import('vendor/summernote/dist/summernote.css');
     app.import('vendor/summernote/dist/summernote.js');
-    app.import('vendor/summernote/dist/font/summernote.eot');
-    app.import('vendor/summernote/dist/font/summernote.ttf');
-    app.import('vendor/summernote/dist/font/summernote.woff');
+    app.import('vendor/summernote/dist/font/summernote.eot', { destDir: 'assets/font' });
+    app.import('vendor/summernote/dist/font/summernote.ttf', { destDir: 'assets/font' });
+    app.import('vendor/summernote/dist/font/summernote.woff', { destDir: 'assets/font' });
 
     // Include Summernote Lang file.
     if (config.lang) {
